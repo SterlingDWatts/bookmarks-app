@@ -69,7 +69,3 @@ export default function BookmarkItem(props) {
         </BookmarksContext.Consumer>
     );
 }
-
-BookmarkItem.defaultProps = {
-    onClickDelete: () => {},
-}
