@@ -33,6 +33,7 @@ class App extends Component {
     this.setState({
       bookmarks: newBookmarks
     });
+    console.log(this.state.bookmarks);
   };
 
   updateBookmark = bookmarkId => {
