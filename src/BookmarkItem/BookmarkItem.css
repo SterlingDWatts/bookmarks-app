@@ -1,7 +1,7 @@
 .BookmarkItem {
   padding: 5px;
   margin-bottom: 10px;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .BookmarkItem__title {
@@ -27,6 +27,6 @@
 }
 
 .BookmarkItem__buttons {
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: right;
 }
