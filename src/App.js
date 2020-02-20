@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import AddBookmark from "./AddBookmark/AddBookmark";
+import EditBookmark from "./EditBookmark/EditBookmark";
 import BookmarkList from "./BookmarkList/BookmarkList";
 import BookmarksContext from "./BookmarksContext";
 import Nav from "./Nav/Nav";
@@ -36,8 +37,12 @@ class App extends Component {
     console.log(this.state.bookmarks);
   };
 
-  updateBookmark = bookmarkId => {
-    // TODO Edit bookmark and setState
+  updateBookmark = updatedBookmark => {
+    this.setState({
+      bookmarks: this.state.bookmarks.map(bm =>
+        bm.id !== updatedBookmark.id ? bm : updatedBookmark
+      )
+    });
   };
 
   componentDidMount() {
@@ -73,12 +78,7 @@ class App extends Component {
           <div className="content" aria-live="polite">
             <Route path="/add-bookmark" component={AddBookmark} />
             <Route exact path="/" component={BookmarkList} />
-            {/* // TODO add EditBookmark component
-                        <Route
-                            path="/edit/:bookmarkId"
-                            component={ EditBookmark }
-                        />
-                        */}
+            <Route path="/edit/:bookmarkId" component={EditBookmark} />
           </div>
         </BookmarksContext.Provider>
       </main>
